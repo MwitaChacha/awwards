@@ -1,8 +1,8 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.core.exceptions import ObjectDoesNotExist
-from .models import Project, Profile
-from .forms import ProfileForm, ProjectForm
+from .models import Project, Profile, Review
+from .forms import ProfileForm, ProjectForm, RateForm
 from django.contrib.auth.models import User
 
 
@@ -80,13 +80,41 @@ def submit_project(request):
 
 def site_details(request,id):
     project = get_object_or_404(Project,id=id)
-  
- 
+    
+    reviews = Review.objects.all().filter(project_id=id)
+    form = RateForm(request.POST)
+    if request.method == 'POST':
+        
+        if form.is_valid():
+            rate = form.save(commit=False)
+            rate.user = user
+            rate.project = project
+            rate.save()
+            return redirect('site_details')
+    else:
+        form = RateForm()    
+    
     context = {
         'project':project,
-        
-       
+        'form':form,
+       'reviews':reviews,
     }
     
     return render(request,'site-details.html',context)
+
+@login_required
+def rate_project(request, id):
+    form=RateForm()
+    project = Project.objects.get(id=id)
+    user = request.user
+    # reviews = Rate.objects.all().filter(project_id=pk)
+    if request.method == 'POST':
+        form = RateForm(request.POST)
+        if form.is_valid():
+         
+            rate = form.save(commit=False)
+            rate.user = user
+            rate.project = project
+            rate.save()
+            return redirect('index')
     
