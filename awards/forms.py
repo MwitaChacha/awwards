@@ -1,5 +1,5 @@
 from django import forms
-from .models import Project,Profile,Review, RATE_CHOICES
+from .models import Project,Profile
 
 class ProfileForm(forms.ModelForm):
     class Meta:
