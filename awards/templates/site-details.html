@@ -1,0 +1,43 @@
+{%extends 'base.html'%}
+{% load bootstrap3 %}
+{% load static%}
+{% block content%}
+
+
+
+
+<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img class="d-block w-100 caro-img" src="{{project.image.url}}" alt="First slide">
+
+
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-12">
+                <div class="jumbotron mt-1">
+                    <h3 class="display-4">{{project.title}}</h3>
+                    <p>By {{project.user}}</p>
+                    <hr class="my-4">
+                    <p>{{project.description}}</p>
+                    <hr class="my-4">
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12"></div>
+                <p>Reviews: <br> Design - {{reviews.design}} | Usability - {{reviews.usability}} | Content -
+                    {{reviews.content}}
+                </p>
+                <div class="d-flex">
+                    <a target="_blank" href="{{project.link}}" class="btn btn-primary login-btn" href="#"
+                        role="button">VISIT
+                        SITE</a>
+                    <a class="mx-5 btn login-btn" href="{% url 'rate_project' project.id %}">RATE SITE</a>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+
+        {% endblock %}
