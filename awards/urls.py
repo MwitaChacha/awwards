@@ -10,4 +10,5 @@ urlpatterns=[
    path('profile/<pk>',views.profile, name = 'profile'),
    path('search/',views.search_results, name='search_results'),
    path('submit-project',views.submit_project, name='submit_project'),
+   path('site_details/<int:id>/',views.site_details,name='site_details'),
 ]

@@ -77,3 +77,16 @@ def submit_project(request):
     
     return render(request, 'submit.html', {'form': form})
     
+
+def site_details(request,id):
+    project = get_object_or_404(Project,id=id)
+    reviews = Review.objects.filter(id=id).all()
+ 
+    context = {
+        'project':project,
+        
+       
+    }
+    
+    return render(request,'site-details.html',context)
+    
