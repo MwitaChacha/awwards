@@ -20,17 +20,9 @@
             <li class="mx-5 nav-item">
                 <a class="nav-link" href="{% url 'submit_project' %}">SUBMIT YOUR SITE</a>
             </li>
-            <li class="nav-item mx-5 dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="false">
-                    PROFILE
-                </a>
-                <div class="dropdown-menu mx-5" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item place" href="{% url 'profile' pk=user.id%}">Profile</a>
-                    
-                    
-            </li>
-            
+            <li class="mx-5 nav-item">
+                <a class="nav-link" href="{% url 'profile' pk=user.id%}">PROFILE</a>
+          
             <li class="nav-item mx-5">
                 <a class="nav-link" href="{% url 'logout'%}">LOGOUT</a>
             </li>

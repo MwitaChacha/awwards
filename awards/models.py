@@ -32,3 +32,15 @@ class Project(models.Model):
     def __str__(self):
         return self.title        
     
+RATE_CHOICES = [
+	(1,'1 - Unsatisfactory'),
+	(2,'2 - Pathetic'),
+	(3,'3 - Very bad'),
+	(4,'4 - Bad'),
+	(5,'5 - Average'),
+	(6,'6 - Okay'),
+	(7,'7 - Good'),
+	(8,'8 - Very Good'),
+	(9,'9 - Excellent'),
+	(10, '10 - Perfect'), 
+]

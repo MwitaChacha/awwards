@@ -80,7 +80,7 @@ def submit_project(request):
 
 def site_details(request,id):
     project = get_object_or_404(Project,id=id)
-    reviews = Review.objects.filter(id=id).all()
+  
  
     context = {
         'project':project,
