@@ -5,7 +5,7 @@ from .models import Project,Profile, Review
 class ProfileTestCases(TestCase):
     def setUp(self):
         self.new_profile = Profile(id=1, user='Chacha', profile_picture='example.jpg', bio='Live life',
-                                   email='chacha@gmail.com', phone_number='0725470100')
+                                   email='chacha@gmail.com', phone_number='0725470100',username='chacha')
 
     def tearDown(self):
         Profile.objects.all().delete()

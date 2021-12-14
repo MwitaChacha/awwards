@@ -118,7 +118,10 @@ def rate_project(request, id):
             rate.user = user
             rate.project = project
             rate.save()
-            return redirect('index')
+            return redirect('site_details', id)
+        
+    else:
+        form= RateForm()    
     
 
 class ProfileList(APIView):

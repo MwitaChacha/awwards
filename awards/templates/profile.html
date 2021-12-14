@@ -21,13 +21,14 @@
             <p><i class="far fa-envelope me-2"></i>{{profile.email}}</p>
             <p><i class="fas fa-phone me-2"></i>+254{{profile.phone_number}}</p>
             {% endfor %}
-
+            <div>
+                <h6>PROJECTS SUBMITTED</h6>
+                {% for project in projects%}
+                <p>{{project.title}}</p>
+                {% endfor %}
+            </div>
         </div>
-        <div>
-            {% for project in projects%}
-            <p>{{project.title}}</p>
-            {% endfor %}
-        </div>
+        
     </div>
 </div>
 <div class="container quote text-center">

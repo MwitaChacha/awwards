@@ -4,7 +4,7 @@ from .models import Project,Profile,Review, RATE_CHOICES
 class ProfileForm(forms.ModelForm):
     class Meta:
         model = Profile
-        fields=['profile_picture','bio','email','phone_number'] 
+        fields=['profile_picture','username','bio','email','phone_number'] 
 
 class ProjectForm(forms.ModelForm):
     class Meta:
