@@ -14,12 +14,12 @@
             <div class="m-2 p-3 text-center">
 
                 <img class="prof-pic" src="{{profile.profile_picture.url}}" alt="">
-                <p>{{profile.user}}</p>
+                <p class="mt-2">{{profile.user}}</p>
             </div>
-            <p>{{profile.bio}}</p>
+            <p><i class="fas fa-quote-right me-2"></i>{{profile.bio}}</p>
             <h6>CONTACT INFORMATION</h6>
-            <p>{{profile.email}}</p>
-            <p>+254{{profile.phone_number}}</p>
+            <p><i class="far fa-envelope me-2"></i>{{profile.email}}</p>
+            <p><i class="fas fa-phone me-2"></i>+254{{profile.phone_number}}</p>
             {% endfor %}
 
         </div>
